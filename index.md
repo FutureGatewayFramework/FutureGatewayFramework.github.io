@@ -1,5 +1,5 @@
 
-#The FutureGateway Framework
+# The FutureGateway Framework
 
 Science always requires an increasing amount of computational resources and cyber insfrastructures in the form of Distributed Computing Infrasrtuctures (DCI) become the most significant solution to reach this continue demand. However the use of DCIs is not always comfortable for the final users and  in general, the bigger are the resources and the more complex is the usage of the related infrastructure. For this reason the Science Gateways have to be considered one of the most satisfying answers to cope this problem.
 One of the first implementation of Science Gateways have been provided by the [XEDE](https://www.xsede.org/ecosystem/science-gateways) initiative, who also provided an official definition for them:
