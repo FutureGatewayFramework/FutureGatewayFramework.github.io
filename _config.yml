@@ -1,7 +1,7 @@
 theme: jekyll-theme-minimal
 title: [FutureGateway Framework]
 description: [A complete framework to buil fastly and securely Science Gateways]
-logo: [https://github.com/FutureGatewayFramework/fgAPIServer/raw/master/fgtest/www/images/fglogo.png]
+logo: [images/fglogo.png]
 show_downloads: [false]
 google_analytics: [https://www.googletagmanager.com/gtag/js?id=UA-147537176-1]
 
