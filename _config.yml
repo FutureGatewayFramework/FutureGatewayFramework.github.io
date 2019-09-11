@@ -1,7 +1,23 @@
-theme: jekyll-theme-minimal
 title: [FutureGateway Framework]
-description: [A complete framework to buil fastly and securely Science Gateways]
+email: riccardo.bruno@ct.infn.it
+description: >- # this means to ignore newlines until "baseurl:"
+  FutureGateway Framework is a complete framework to build Science Gateways
+  This web site keeps updated information about this software initiative
+baseurl: "" # the subpath of your site, e.g. /blog
+url: "https://futuregatewayframework.github.io" # the base hostname & protocol for your site, e.g. http://example.com
+#twitter_username: ricsxn
+github_username:  ricsxn
+theme: minima
+plugins:
+  - jekyll-feed
 logo: [images/fglogo.png]
 show_downloads: [false]
 google_analytics: UA-147537176-1
+
+
+
+
+
+
+
 

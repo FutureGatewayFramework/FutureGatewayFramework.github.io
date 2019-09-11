@@ -1,3 +1,6 @@
+---
+layout: home
+---
 
 # The FutureGateway Framework
 
