@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Welcome to Jekyll!"
+title:  "Welcome to FutureGateway Framwork site"
 date:   2019-09-10 15:44:49 +0200
 categories: jekyll update
 ---
