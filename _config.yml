@@ -13,6 +13,7 @@ plugins:
 logo: [images/fglogo.png]
 show_downloads: [false]
 google_analytics: UA-147537176-1
+future: true
 
 
 
