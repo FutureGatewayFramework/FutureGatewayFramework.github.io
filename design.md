@@ -31,7 +31,7 @@ In particular, the following **keywords** can be highlighted:
 * SG front-end may use many DCI in a transparent way
 * SG user activity will be automatically tracked and usage resource accounted automatically
 
-**Provide a set of restFull [APIs](/fgapis/)**
+**Provide a set of restFull [APIs](/fgfapis/)**
 * Back-end web portals independency
 * Mobile and Desktop applications, Workflow Engines, IoT
 * Accessible by any programming language
