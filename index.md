@@ -54,13 +54,14 @@ This set of API manages the core part of the FGG, in particuar:
 * Describe the DCI configuration necessary to run an ‘application’. 
 * Form of a set of pairs: <Key name, Key value>
 
-** Applications**
+**Applications**
 * It describes the activity to perform on the DCI.
 * What to execute, involved files, error and output streams, etc.
 * Each application may execute on one or more infrastructures (random choice).
 
 **Tasks**
-Applications executed or executing on a DCI are tasks. The term ‘task’ may include many operations ranging from simple batch executions, up to more sophisticated actions like a PaaS creation , start/stop services, etc.
+* Applications executed or executing on a DCI are tasks.
+* The term ‘task’ may include many operations ranging from simple batch executions, up to more sophisticated actions like a PaaS creation , start/stop services, etc.
 
 ## UGR
 This set of API is used to map SG membership allowing or denying authorization to the DCI resorces.
