@@ -8,6 +8,7 @@ url: "https://futuregatewayframework.github.io" # the base hostname & protocol f
 #twitter_username: ricsxn
 github_username: ricsxn
 theme: minima
+#theme: jekyll-theme-minimal
 plugins:
   - jekyll-feed
 logo: [images/fglogo.png]
