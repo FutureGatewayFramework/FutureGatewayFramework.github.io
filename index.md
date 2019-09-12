@@ -1,6 +1,6 @@
 ---
 layout: default
-title:
+title: ""
 ---
 
 # ![FGF](/images/fglogo_64.png) [FutureGateway Framework][FGF]
