@@ -1,3 +1,5 @@
+markdown: kramdown
+timezone: Europe/Rome
 title: Home 
 email: riccardo.bruno@ct.infn.it
 description: >- # this means to ignore newlines until "baseurl:"
@@ -11,7 +13,7 @@ theme: minima
 #theme: jekyll-theme-minimal
 plugins:
   - jekyll-feed
-logo: images/fglogo.png
+logo: images/fglogo_32.png
 show_downloads: [false]
 google_analytics: UA-147537176-1
 future: true

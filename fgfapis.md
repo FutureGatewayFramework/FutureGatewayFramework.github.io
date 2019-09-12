@@ -5,11 +5,11 @@ permalink: /fgfapis/
 ---
 
 # FutureGateway APIs
-One of the most important aspects of the FGF consists of its set of [RESTful APIs](http://docs.fgapis.apiary.io/#)
+One of the most important aspects of the FGF consists of its set of RESTful APIs.
 The whole set of APIs have been splitted in the following families:
 
-* **IAT** - Infrastructure Applications and Tasks
-* **UGR** - Users Groups and Roles
+* **IAT** - Infrastructure Applications and Tasks ([Specifications](http://docs.fgapis.apiary.io/#))
+* **UGR** - Users Groups and Roles (_Specification not yet available_)
 * **AAA** - Authorizing, Auditing and Accounting (*under desing*)
 
 ## IAT
