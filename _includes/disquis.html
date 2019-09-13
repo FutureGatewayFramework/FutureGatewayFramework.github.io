@@ -1,4 +1,6 @@
-{% if page.comments != false and jekyll.environment == "production" %}
+{% if page.comments %}
+  <hr>
+  <h1>Leave your comments</h1>
   <div id="disqus_thread"></div>
   <script>
     var disqus_config = function () {
