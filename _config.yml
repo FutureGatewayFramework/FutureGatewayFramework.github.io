@@ -1,6 +1,6 @@
 markdown: kramdown
 timezone: Europe/Rome
-title: Home 
+title: FutureGateway Framework 
 email: riccardo.bruno@ct.infn.it
 description: >- # this means to ignore newlines until "baseurl:"
   FutureGateway Framework is a complete framework to build Science Gateways
