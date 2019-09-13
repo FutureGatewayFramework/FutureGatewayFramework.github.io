@@ -1,6 +1,7 @@
 ---
 layout: default
 title: ""
+priority: 0
 ---
 
 # ![FGF](/images/fglogo_64.png) [FutureGateway Framework][FGF]
@@ -18,6 +19,10 @@ Although SGs are a powerful solution to easily access DCIs, their adoption intro
 |The **FutureGateway Framework**  (FGF) is a **software initiative** aiming to build **fastly** and **securely** well structured Science Gateways.|
 
 The FGF is totally [open source][OSI], licenced under the [Apache2][APACHE2] licence, the source code of all its components is fully available on [GitHub][GITHUB] and the final users contribution is welcome and even encouraged.
+The framework is made of two components:
+
+* The **FutureGateway** (FG), that consists of the core part of the Framework
+* A collections of **Software APIs**, **Installation scripts** and **Tools**, to install, maintain and develo GUIs.
 
 If you are interested in this work and you want to get more information, plase visit the [design](/design/) page. For GUI developers it could be interesting to get overview of the [futuregateway APIs](/fgfapis/), or to get full information about the FGF, please visit its [documentation](https://github.com/FutureGatewayFramework/fgDocumentation).
 If you would like to stay updated with FGF developments you may visit our [blog](/blog/) area.

@@ -2,6 +2,7 @@
 layout: default
 title: Design
 permalink: /design/
+priority: 1
 ---
 
 # Design Principles
@@ -36,15 +37,10 @@ Beside keyords above, the FGF provides the following key features:
 
 |**KF3**|
 |---|
-||•One of the most important feature of the FGF consists of the **[FutureGateway APIs](/fgfapis/)**. Any SG operation can be managed usign the FG APIs, from SG application, its execution and application results acquisition and mode.|
-||•The introduction of the REST APIs allow both back-end and fron-end developers to target any kind of technology.|
-||•Beside the tipical Science Gateway made of a web portal, mobile and desktop applications, can be easily developed. Also workflow engines successfully exploited FG APIs as well as IoT projects.|
+||•One of the most important feature of the FGF consists of the **[FutureGateway APIs](/fgfapis/)**. Any SG operation can be managed usign the FG APIs such as: application execution, check, status and results acquisition.|
+||•The introduction of the REST APIs allow both back-end and front-end developers to target any kind of technology.|
+||•Beside the tipical Science Gateway made of a web portal, mobile and desktop applications can be easily developed. Also workflow engines successfully exploited the FG APIs. In the same fashio IoT projects may get benefits from using the FGF.|
 ||•FGF provides APIs and libraries written for the most popular programming language to ease the use of APIs.|
-
-# Architecture
-The core components of the FutureGateway Framework consists of its internal FutureGatway (FG) core component that is responsible to handle user requests coming from REST APIs and executes the defined applications in the underlying DCIs.
-
-![FGSG](/images/FG_arch.png)
 
 [BREW]: https://brew.sh
 [APACHE2]: https://www.apache.org/licenses/LICENSE-2.0
