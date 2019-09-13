@@ -2,7 +2,7 @@
 layout: default
 title: Architecture
 permalink: /arch/
-priority: 2
+order: 2
 ---
 
 # Architecture

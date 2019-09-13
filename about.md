@@ -2,10 +2,10 @@
 layout: default
 title: About
 permalink: /about/
-priority: 4
+order: 4
 ---
 
-The [FutureGateway Framework][FGF] has been initialy developed and simply called the [FutureGateway][FG] in the context of the European project [INDIGO-dc][INDIGO-DC], further developments have been added in the context of the European project [EOSC-hub][EOSC-HUB] providing its final shape of a Science Gateways Framework. Outside the context of the projects above the FGF initiative is managed in best effort basis by the [INFN][INFN] [Dept. of Catania][INFNCT].
+The [FutureGateway Framework][FGF] has been initialy developed and simply called the [FutureGateway][FG] in the context of the European project [INDIGO-dc][INDIGO-DC], further developments have been added in the context of the European project [EOSC-hub][EOSC-HUB] providing its final shape of a Science Gateways Framework. Outside the context of the projects above, the FGF initiative is managed in best effort basis by the [INFN][INFN] [Dept. of Catania][INFNCT].
 
 [INFN]: https://www.infn.it
 [INFNCT]: https://www.ct.infn.it

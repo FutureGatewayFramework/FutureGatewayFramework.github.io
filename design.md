@@ -2,7 +2,7 @@
 layout: default
 title: Design
 permalink: /design/
-priority: 1
+order: 1
 ---
 
 # Design Principles
