@@ -21,7 +21,7 @@ Although SGs are a powerful solution to easily access DCIs, their adoption intro
 The framework is made of two components:
 
 * The **FutureGateway** (FG), that consists of the core part of the Framework
-* A collections of **Software APIs**, **Installation scripts** and **Tools**, to install, maintain and develop GUIs.
+* A collections of **Software APIs**, **Installation scripts** and **Tools**, to install, maintain and develop both back-end and GUIs.
 
 The FGF is totally [open source][OSI], licenced under the [Apache2][APACHE2] terms, the source code of all its components is fully available on [GitHub][GITHUB] and the final users contribution is welcome and even encouraged.
 
