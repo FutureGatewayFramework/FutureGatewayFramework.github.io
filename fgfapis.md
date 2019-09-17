@@ -2,7 +2,7 @@
 layout: default
 title: APIs
 permalink: /fgfapis/
-order: 3
+order: 4
 ---
 
 # FutureGateway APIs

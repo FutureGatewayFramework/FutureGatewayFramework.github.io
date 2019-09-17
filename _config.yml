@@ -1,10 +1,10 @@
 markdown: kramdown
 timezone: Europe/Rome
 title: FutureGateway Framework 
-email: riccardo.bruno@ct.infn.it
+email: "riccardo.bruno@ct.infn.it"
 description: >- # this means to ignore newlines until "baseurl:"
   FutureGateway Framework is a complete framework to build Science Gateways
-  This web site keeps updated information about this software initiative
+  This web site keeps updated information about this software initiative.
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://futuregatewayframework.github.io" # the base hostname & protocol for your site, e.g. http://example.com
 #twitter_username: ricsxn
@@ -13,6 +13,7 @@ theme: minima
 #theme: jekyll-theme-minimal
 plugins:
   - jekyll-feed
+  - jekyll-seo-tag
 logo: images/fglogo_32.png
 show_downloads: [false]
 google_analytics: UA-147537176-1

@@ -2,7 +2,7 @@
 layout: default
 title: Blog
 permalink: /blog/
-order: 5
+order: 1
 ---
 
 Stay tuned with latest FGF news from this page, below list present last updates from the most recent:
