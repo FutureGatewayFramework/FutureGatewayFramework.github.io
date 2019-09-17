@@ -21,7 +21,7 @@ In particular, the following **keywords** used int the definition have been used
 |**Customization**|Serverd communities often require their own specific customisations that SGs should easily provide. The FGF structure has been specifically thought to allow any kind of customisation.|
 
 # Key features
-Beside keyords above, the FGF provides the following key features:
+Beside keyords above, the FGF has the following key features:
 
 |**KF1**|**Ease the installation and the maintenance**|
 |---|---|
@@ -31,12 +31,12 @@ Beside keyords above, the FGF provides the following key features:
 
 |**KF2**|**Flexible and structured access to DCIs through the use of pluggable components**|
 |---|---|
-||• Potentially the FGF can access any kind of DCI using pluggable components called **executor interfaces**. FGF provides its own standard executor interfaces: Grid and Cloud Engine G&CEngine (JSAGA) and Tosca (PaaS orchestrator developed during INDIGO-dc).|
+||• Potentially the FGF can access any kind of DCI using pluggable components called **executor interfaces**. FGF provides its own standard executor interfaces: Grid and [Cloud Engine][G&CENG] ([JSAGA][JSAGA]) and [Tosca][TOSCAORCH] ([INDIGO-dc][INDIGODC] PaaS orchestrator).|
 ||• Advanced users may integrate new DCIs without affecting the SG front-end, moreover a single SG application can access different DCIs.|
 ||• SG user activity will be automatically tracked and usage resource automatically accounted.|
 
-|**KF3**|
-|---|
+|**KF3**|**RESTful APIs**|
+|---|--|
 ||•One of the most important feature of the FGF consists of the **[FutureGateway APIs](/fgfapis/)**. Any SG operation can be managed usign the FG APIs such as: application execution, check, status and results acquisition.|
 ||•The introduction of the REST APIs allow both back-end and front-end developers to target any kind of technology.|
 ||•Beside the tipical Science Gateway made of a web portal, mobile and desktop applications can be easily developed. Also workflow engines successfully exploited the FG APIs. In the same fashio IoT projects may get benefits from using the FGF.|
@@ -45,3 +45,7 @@ Beside keyords above, the FGF provides the following key features:
 [BREW]: https://brew.sh
 [APACHE2]: https://www.apache.org/licenses/LICENSE-2.0
 [GITHUB]: https://github.com
+[G&CENG]: https://github.com/csgf/grid-and-cloud-engine/tree/FutureGateway
+[JSAGA]: http://software.in2p3.fr/jsaga/latest-release/
+[TOSCAORCH]: https://github.com/indigo-dc/orchestrator
+[INDIGODC]: https://www.indigo-datacloud.eu
