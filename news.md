@@ -1,7 +1,7 @@
 ---
 layout: default
-title: Blog
-permalink: /blog/
+title: News
+permalink: /news/
 order: 1
 ---
 

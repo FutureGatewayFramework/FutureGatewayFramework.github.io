@@ -37,7 +37,9 @@ The EI information will be used to identify the correct DCI handler, this will u
 
 ![Back-end architecture](/images/back-end-arch.png)
 
-By design the API Server should instantiate dinamically EIs from the name registered in the _queue_table_, however this is not happening in the current version of the [APIServerDaemon][APISRVDAEMON], where an internal `if ... else if ... else <unknown EI>` chain statically handles the supported EIs.
+
+## Executor Interface
+Executor Interfaces are modular software components having the final responsability to physically perform the given activity into the DCI. By design the API Server should instantiate dinamically EIs, starting from the name registered in the _queue_table_, however this is not happening in the current version of the [APIServerDaemon][APISRVDAEMON], where an internal `if ... else if ... else <unknown EI>` chain statically handles the supported EIs.
 
 [BREW]: https://brew.sh
 [APACHE2]: https://www.apache.org/licenses/LICENSE-2.0

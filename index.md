@@ -26,7 +26,9 @@ The framework is made of two components:
 The FGF is totally [open source][OSI], licenced under the [Apache2][APACHE2] terms, the source code of all its components is fully available on [GitHub][GITHUB] and the final users contribution is welcome and even encouraged.
 
 If you are interested in this work and you want to get more information, plase visit the [design](/design/) page. For GUI developers it could be interesting to get overview of the [futuregateway APIs](/fgfapis/), or to get full information about the FGF, please visit its [documentation](https://github.com/FutureGatewayFramework/fgDocumentation).
-If you would like to stay updated with FGF developments you may visit our [blog](/blog/) area.
+If you would like to stay updated with FGF developments you may visit our [news](/news/) area.
+
+Subscribe the FutureGatewayFramework <a href="https://mailman.ct.infn.it/mailman/listinfo/futuregatewayframework">mailing list</a>
 
 
 [FGF]: https://github.com/FutureGatewayFramework

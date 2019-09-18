@@ -24,6 +24,8 @@ Outside the context of the projects above, the FGF initiative is managed by the 
 |[EGI Conference 2017](https://www.egi.eu/news/egi-conference-2017-catania-9-12-may/)|[SaaS via a Portal: FutureGateway](https://indico.egi.eu/indico/event/3249/session/39/contribution/144)<br/>[Using FutureGateway for a Genomic Application](https://indico.egi.eu/indico/event/3249/session/39/contribution/145)<br/>[Molecular dynamics in the Cloud using FutureGateway](https://indico.egi.eu/indico/event/3249/session/42/contribution/157)|
 |[Cloudscape2016](https://www.cloudscapeseries.eu)|[INDIGO-DataCloud Use Cases](https://www.cloudscapeseries.eu/content/indigo-datacloud-use-cases)|
 
+# Contacts
+Please contact <a href="mailto: futuregatewayframework@ct.infn.it">us</a> to receive more info or to get support.
 
 [INFN]: https://www.infn.it
 [INFNCT]: https://www.ct.infn.it
