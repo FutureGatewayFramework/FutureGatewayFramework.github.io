@@ -6,7 +6,7 @@ order: 0
 
 # ![FGF](/images/fglogo_64.png) [FutureGateway Framework][FGF]
 
-Science always requires an increasing amount of computational resources and cyber insfrastructures in the form of Distributed Computing Infrasrtuctures (**DCI**) become the most significant solution to satisfy this continue demand. However the usability of the DCIs is not comfortable and for the final users and in general, the bigger the resources are and the more complex is the usage of the related infrastructure. For this reason the **Science Gateways** (SG)s have to be considered one of the most satisfying answers to cope this problem.
+Science always requires an increasing amount of computational resources and cyber insfrastructures in the form of Distributed Computing Infrasrtuctures (**DCI**) become the most significant solution to satisfy this continue demand. However the usability of the DCIs is not comfortable for the final users and in general, the bigger the resources are and the more complex is the usage of the related infrastructure. For this reason the **Science Gateways** (SG)s have to be considered one of the most satisfying answers to cope this problem.
 One of the first implementation of Science Gateways have been provided by the [XEDE](https://www.xsede.org) initiative, who also provides the following:
 
 |**Definition** [[XEDE](https://www.xsede.org/ecosystem/science-gateways)]|
