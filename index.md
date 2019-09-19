@@ -16,7 +16,7 @@ One of the first implementation of Science Gateways have been provided by the [X
 Although SGs are a powerful solution to easily access DCIs, their adoption introduces a further level of complexity placed between the DCIs exploitation and the pure scientific work, made of non trivial steps like: identify the resources, develop the back-end, develop user interfaces, plan the authentication and authorization and provide at least a minimal accounting solution. For this reason it has been developed the:
 
 |---|
-|The **FutureGateway Framework**  (FGF) is a **software initiative** aiming to build **quickly** and **securely** well structured Science Gateways.|
+|**FutureGateway Framework**  (FGF) a **software initiative** aiming to build **quickly** and **securely** well structured Science Gateways.|
 
 The framework is made of two components:
 
