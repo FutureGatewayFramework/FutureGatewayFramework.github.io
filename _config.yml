@@ -4,15 +4,12 @@ title: FutureGateway Framework
 author: Riccardo Bruno
 authweb: "https://ricsxn.github.io"
 email: "riccardo.bruno@ct.infn.it"
-description: >- # this means to ignore newlines until "baseurl:"
-  FutureGateway Framework is a complete framework to build Science Gateways
+description: >-
+  FutureGateway Framework is a complete framework to build Science Gateways.
   This web site keeps updated information about this software initiative.
-baseurl: "" # the subpath of your site, e.g. /blog
-url: "https://futuregatewayframework.github.io" # the base hostname & protocol for your site, e.g. http://example.com
-#twitter_username: ricsxn
-github_username: ricsxn
+baseurl: ""
+url: "https://futuregatewayframework.github.io"
 theme: minima
-#theme: jekyll-theme-minimal
 plugins:
   - jekyll-feed
   - jekyll-seo-tag
@@ -20,6 +17,9 @@ logo: images/fglogo_32.png
 show_downloads: [false]
 google_analytics: UA-147537176-1
 future: true
+#twitter_username: ricsxn
+linkedin_username: riccardo-bruno-b333931
+github_username: ricsxn
 
 
 
