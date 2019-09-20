@@ -9,6 +9,7 @@ description: >-
   This web site keeps updated information about this software initiative.
 baseurl: ""
 url: "https://futuregatewayframework.github.io"
+repourl: "https://github.com/FutureGatewayFramework"
 theme: minima
 plugins:
   - jekyll-feed
