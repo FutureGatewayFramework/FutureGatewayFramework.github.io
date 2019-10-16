@@ -10,7 +10,7 @@ comments: true
 ---
 
 # About
-[Beilstein][BEILSTEIN] [Symposium 2019][OSSYMP19]: **The What, How and Why of Open Science** held from 15th to the 17th of October 2019 brought together research scientists, data scientists, publishers, funders and other interested parties to review critically current publication practices in chemistry and related sciences. FutureGateway has been presented applied in the context of OpenData
+[Beilstein][BEILSTEIN] [Symposium 2019][OSSYMP19]: **The What, How and Why of Open Science** held from 15th to the 17th of October 2019 brought together research scientists, data scientists, publishers, funders and other interested parties to review critically current publication practices in chemistry and related sciences. FutureGateway has been presented in the context of OpenData implementing the Reproducibility and Reproducibility Platform available in the [FutureGateway ScienceGateway (FGSG)][FGSG] intially developed for the [PALMS][PALMS] experiment and published by the [Science Software on Demand (SSOD)][SSOD] [EGI'][EGI] Service.
 
 # [Poster][POSTER]
 
@@ -34,3 +34,7 @@ The poster has been presented during the conference by a 10 minutes talk, presen
 [POSTER]: /media/OS_Symposium19_Poster.pdf
 [SLIDES]: /media/OS_Symposium19_Slides4presentation.pdf
 [REPRCRYSIS]: https://www.nature.com/news/1-500-scientists-lift-the-lid-on-reproducibility-1.19970
+[SSOD]: https://fgsg.egi.eu/egissod/web/ssod/
+[FGSG]: /fgf/update/2019/09/11/fgsg.html
+[PALMS]: /fgf/update/2019/09/16/palms.html
+[EGI]: https://www.egi.eu
