@@ -10,7 +10,7 @@ comments: true
 ---
 
 # About
-This meeting tries to create the correct roadmap for developing the new InvenioRDM digital asset management system. The goal of the meeting consists of mock-up analisys, data models discussions made among developers and final users. The RRP has been presented beside the [INFN OpenAccess repository][INFNOAR] as interested party especially for retrieving DOIs and their related hierarchy through the use of REST APIs.
+This meeting aimed to create the correct roadmap for developing the new InvenioRDM digital asset management system. The goal of the meeting consisted of mock-up analisys, data models discussions made among developers and final users. The RRP has been presented beside the [INFN OpenAccess repository][INFNOAR] as interested party especially for retrieving DOIs and their related hierarchy through the use of REST APIs.
 The RRP can be considered a good integration between the [Science Softeare on Demand][SSOD] service, powered by the [FutureGateway Science Gateway][FGSG].
 During the participation the need to extract via RESTful APIs selected DOIs following their hierarchy, has been highlighted as a core component of the RRP system.
 
@@ -29,3 +29,4 @@ Presented slides are available for [download][SLIDES].
 [FGSG]: /fgf/update/2019/09/11/fgsg.html
 [PALMS]: /fgf/update/2019/09/16/palms.html
 [INFNOAR]: https://www.openaccessrepository.it
+[INVENIORDMPM]: https://indico.cern.ch/event/854421/page/18559-general-information

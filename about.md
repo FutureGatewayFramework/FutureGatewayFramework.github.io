@@ -20,6 +20,7 @@ Outside the context of the projects above, the FGF initiative is managed by the 
 # Presentations and demos
 
 |---|---|
+|[InvenioRDM Project Meeting][INVENIORDMPM]|Reusability and Reproduciblity Platform inside the [INFN OpenAccess Repository][INFNOAR] using Invenio+Zenodo custimisation|
 |[BEILSTEIN SYMPOSIUM '19](https://www.beilstein-institut.de/files/abstract_book_beilstein_openscience_symposium_2019_online.pdf)|[Science Reproducibility and Reusability with FutureGateway and a Zenodo-like repository: the PALMS experiment](/fgf/update/2019/10/15/beilstein-symposium-19.html)|
 |[DI4R2018](https://indico.egi.eu/indico/event/3973/timetable/#20181009)|[Enabling scientific applications on hybrid e-Infrastructures: the FutureGateway framework](https://www.digitalinfrastructures.eu/content/enabling-scientific-applications-hybrid-e-infrastructures-futuregateway-framework)|
 |[EGI Conference 2017](https://www.egi.eu/news/egi-conference-2017-catania-9-12-may/)|[SaaS via a Portal: FutureGateway](https://indico.egi.eu/indico/event/3249/session/39/contribution/144)<br/>[Using FutureGateway for a Genomic Application](https://indico.egi.eu/indico/event/3249/session/39/contribution/145)<br/>[Molecular dynamics in the Cloud using FutureGateway](https://indico.egi.eu/indico/event/3249/session/42/contribution/157)|
@@ -34,5 +35,5 @@ Please contact <a href="mailto: futuregatewayframework@ct.infn.it">us</a> to rec
 [EOSC-HUB]: https://www.eosc-hub.eu
 [FGF]: https://github.com/FutureGatewayFramework
 [FG]: https://github.com/indigo-dc/fgDocumentation
-
-
+[INVENIORDMPM]: https://indico.cern.ch/event/854421/page/18559-general-information
+[INFNOAR]: https://www.openaccessrepository.it
