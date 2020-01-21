@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Reusability and Reproducibility Platform (RRP) at InvenioRDM Project Meeting"
-shdesc: "The <a href="https://www.openaccessrepository.it">INFN OpenAccess repository</a> has been presented at the InvenioRDM Kick-off meeting at CERN. The reusability and reproducibility platform has been also presented."
+shdesc: "The <a href='https://www.openaccessrepository.it'>INFN OpenAccess repository</a> has been presented at the InvenioRDM Kick-off meeting at CERN. The reusability and reproducibility platform has been also presented."
 date: 2020-01-21 13:00:00 +0200
 categories: FGF update
 author: "<a href='https://ricsxn.github.io'>Riccardo Bruno</a>"
