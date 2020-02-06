@@ -27,7 +27,7 @@ The [FutureGateway Framework][FGF] has been initially developed and simply calle
 # Contacts
 Please contact <a href="mailto: futuregatewayframework@ct.infn.it">us</a> to receive more info or to get support.
 
-# Acknowledgments:
+# Acknowledgments
 
 * [EOSC-hub project](http://eosc-hub.eu/) (Horizon 2020) under Grant number 777536 <img src="https://wiki.eosc-hub.eu/download/attachments/1867786/eu%20logo.jpeg?version=1&modificationDate=1459256840098&api=v2"/>
 * [INDIGO-DataCloud project](https://www.indigo-datacloud.eu/) (Horizon 2020) under Grant number 653549
