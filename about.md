@@ -6,9 +6,7 @@ order: 6
 ---
 
 # ![FGFIMG](/images/fglogo_64.png) About FutureGateway Framework
-The [FutureGateway Framework][FGF] has been initialy developed and simply called the [FutureGateway][FG] in the context of the European project [INDIGO-dc][INDIGO-DC], further developments have been added in the context of the European project [EOSC-hub][EOSC-HUB] providing its final shape of a complete Framework.
-
-Outside the context of the projects above, the FGF initiative is managed by the [INFN][INFN] [Division of Catania][INFNCT].
+The [FutureGateway Framework][FGF] has been initially developed and simply called the [FutureGateway][FG] in the context of the European project [INDIGO-dc][INDIGO-DC], further developments have been added in the context of the European project [EOSC-hub][EOSC-HUB] providing its final shape of a complete Framework. Outside the context of the projects above, the FGF initiative is managed by the [INFN][INFN] [Division of Catania][INFNCT].
 
 # Pubblications
 
@@ -28,6 +26,12 @@ Outside the context of the projects above, the FGF initiative is managed by the 
 
 # Contacts
 Please contact <a href="mailto: futuregatewayframework@ct.infn.it">us</a> to receive more info or to get support.
+
+# Acknowledgments
+
+* [EOSC-hub project](http://eosc-hub.eu/) (Horizon 2020) under Grant number 777536 <img src="https://wiki.eosc-hub.eu/download/attachments/1867786/eu%20logo.jpeg?version=1&modificationDate=1459256840098&api=v2" height="24"> <img src="https://wiki.eosc-hub.eu/download/attachments/18973612/eosc-hub-web.png?version=1&modificationDate=1516099993132&api=v2" height="24">
+* [INDIGO-DataCloud project](https://www.indigo-datacloud.eu/) (Horizon 2020) under Grant number 653549 <img src="https://wiki.eosc-hub.eu/download/attachments/1867786/eu%20logo.jpeg?version=1&modificationDate=1459256840098&api=v2" height="24">
+* [INFN][INFN] [Division of Catania][INFNCT] <img src="/images/infn_logo.png" height="24">
 
 [INFN]: https://www.infn.it
 [INFNCT]: https://www.ct.infn.it
