@@ -6,7 +6,6 @@ order: 5
 ---
 
 # Tutorials
-change
 
 |---|---|
 |[FutureGateway APIs]({{ site.baseurl }}{% link tutorials/fgapis.md %})|FutureGateway installation and basic API usage examples.|
