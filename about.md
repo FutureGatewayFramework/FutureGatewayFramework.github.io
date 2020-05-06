@@ -2,7 +2,7 @@
 layout: default
 title: About
 permalink: /about/
-order: 5
+order: 6 
 ---
 
 # ![FGFIMG](/images/fglogo_64.png) About FutureGateway Framework
