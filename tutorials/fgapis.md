@@ -1,8 +1,7 @@
 ---
 layout: default
-title: Resources
-permalink: /resources/fgapis
-order: 5
+title: FutureGateway API tutorial
+exclude: true
 ---
 
 # FutureGateway APIs tutorial
