@@ -9,7 +9,7 @@ order: 5
 
 |---|---|
 |[FutureGateway APIs]({{ site.baseurl }}{% link tutorials/fgapis.md %})|FutureGateway installation and basic API usage examples.|
-
+|[Liferay GUI]({{ site.baseurl }}{% link tutorials/gui_liferay7.md %})|How to prepare a GUI interface intacting with FG.|
 
 [INFN]: https://www.infn.it
 [INFNCT]: https://www.ct.infn.it
