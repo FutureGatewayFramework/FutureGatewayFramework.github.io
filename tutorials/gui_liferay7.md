@@ -1,8 +1,27 @@
 ---
 layout: default
-title: FG GUI examples with Liferay 7.x
 exclude: true
 ---
+###### Back to [Resources](/resources) page
+
+# Start test Liferay container
+
+The same makefile used to generate **fgtest** container as described by the [FG API usage tutorial](/tutorials/fgapis.html),
+
+make liferay
+
+Liferay uses Blade-CLI utility to help performing development operations.
+This step cannot be provided by any autmated installtion script since its version may change over time.
+Below are provided the necessart steps to donwnload and isntall Blade CLI and its development environment
+
+gradle installation + vim
+
+donwload sdk
+
+liferaydev user creation
+
+
+
 
 TEST_CNT=fgtest_0.2
 LIFERAY_IMAGE=esystemstech/liferay:7.2.0-ga1

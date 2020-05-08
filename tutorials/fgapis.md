@@ -1,8 +1,8 @@
 ---
 layout: default
-title: FutureGateway API tutorial
 exclude: true
 ---
+###### Back to [Resources](/resources) page
 
 # FutureGateway APIs tutorial
 
