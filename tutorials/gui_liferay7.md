@@ -224,7 +224,7 @@ As explained [above](#create-the-portlet), the back-end operations are in charge
 |`src/main/java`|Any further external java class must be placed here|
 
 
-First of all, download from FG Toolkit repository the java classes used to manage the Liferay backend operations, in particular the class *FutureGatewayAPIs*
+First of all, download from [FG Toolkit](https://github.com/FutureGatewayFramework/fgToolkit) repository the java classes used to manage the Liferay backend operations, in particular the class *FutureGatewayAPIs*.
 
 ```bash
 make liferaydev_conn
@@ -351,13 +351,24 @@ fg_api_settings = {
 };
 
 // Application settigns
-var fg_app_settings = {
+fg_app_settings = {
   name: '<%= appName %>',
   id: '<%= appId %>',
   group_name: '<%= appGroup %>',
 };
 </script>
 ```
+
+Despite the number of code lines, the purpose of the back-end code above is really simple especially because FG API are handled at high level by the java class **FutureGatewayAPIs** making the source more readable. Steps performed by code can be summarised by:
+
+* Retrieve portal user information from Liferay
+* Check the connection with the FG
+* Retrieve a *super user* access token using credentials having full access rights
+* Check if the portal user is already registered, if not it will be registered
+* If the user exists, a delegated token for the user will be generated
+* If everithing is fine, the information about the back-end operations are collected inside three javascript variables: *fg_user_info*, *fg_api_settings*, *fg_app_settings*. The first collecting user information, the second for the FG API Server, the third for the application.
+
+It is possible to view the content of these variables accessing the portal opening the Browser inspector and using its console.
 
 ## Manage fron-end
 
