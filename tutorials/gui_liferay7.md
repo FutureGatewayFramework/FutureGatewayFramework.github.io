@@ -59,7 +59,7 @@ Below are only described the necessary steps to donwnload and isntall Blade CLI 
 ### Retrieve the Blade CLI software
 
 Liferay provides the page [Installing Blade CLI](https://help.liferay.com/hc/en-us/articles/360017885232-Installing-Blade-CLI) to get infroamation and download the software.
-The first operation consists in getting the Liferay DSK package which contains the whole files necessary to setup the Blade CLI. The SDK is available in a dedicated [SourceForge](https://sourceforge.net/projects/lportal/files/Liferay%20IDE/) repository, were developers may download different files accordingly to the available SDK versions and after that he destination operating system. For this tutorial, the user has to select first the directory (for instance 3.8.1/), then download the SDK file: `LiferayWorkspace-<timestamp>-linux-x64-installer.run`.
+The first operation consists in getting the Liferay SDK package which contains the whole files necessary to setup the Blade CLI. The SDK is available in a dedicated [SourceForge](https://sourceforge.net/projects/lportal/files/Liferay%20IDE/) repository, were developers may download different files accordingly to the available SDK versions and after that he destination operating system. For this tutorial, the user has to select first the directory (for instance 3.8.1/), then download the SDK file: `LiferayWorkspace-<timestamp>-linux-x64-installer.run`.
 When the download is completed, move the SDK file from Liferay container host machine to the container with:
 
 ```bash
@@ -72,7 +72,7 @@ Then execute:
 make liferaydev
 ```
 
-Now it is possible to start the SDK installation, pleas notice that this operation is perfomed as non root user, while answers to questions prompted by the setup are explained below the command
+Now it is possible to start the SDK installation, this operation is perfomed as non root user, while answers to questions prompted by the setup are explained below the command:
 
 ```bash
 make liferaysdk
@@ -103,7 +103,7 @@ It is now possible to create the portlet that will be out base structure for the
 make liferaydev_conn
 ```
 
-Then it is necessary to enter the *liferay-workspace* directory create during the Liferay SDK installation at the step above.
+Then it is necessary to enter the *liferay-workspace* directory created during the Liferay SDK installation at the step above.
 
 ```bash
 cd liferay-workspace
@@ -171,16 +171,16 @@ blade deploy
 Almost at the end of the command output, the message:
 
 ```text
-Files of project ':modules:guitest' deployed to /home/liferaydev/liferay-workspace/bundles/osgi/modules
+Files of project ':modules:guitest' deployed to `/home/liferaydev/liferay-workspace/bundles/osgi/modules`
 ```
 
-informs about the directory containing the compiled module, the final step consists in deploying the module with
+The message informs about the directory containing the compiled module, the final step consists in deploying the module to the portal with:
 
 ```bash
 cp /home/liferaydev/liferay-workspace/bundles/osgi/modules/guitest.jar /opt/liferay/home/deploy/osgi/modules/
 ```
 
-After the copy operation, Liferay will recognise the new module in `/opt/liferay/home/deploy/osgi/modules/` directory and will deploy it in the running portal.
+After the copy operation, Liferay will recognise the presence of the new module in `/opt/liferay/home/deploy/osgi/modules/` directory and will deploy it in the running portal.
 To verify the status of this process, it could be useful to watch Liferay log file with:
 
 ```bash
@@ -205,9 +205,9 @@ The new portlet should be available for use.
 
 # Integrate the portlet with FG APIs
 
-Scope of this part of the tutorial consists in the integration of FG APIs insid the portlet created in the [above](#create-the-portlet) step.
+Scope of this part of the tutorial consists in the integration of FG APIs inside the portlet created in the [above](#create-the-portlet) step.
 This part can be splitted in two separate steps, a back-end and front-end operations
-The back-end operations are performed by Liferay at server level when the user accesses the portlet interface. During this phase, FG UGR APIs will be used to:
+The back-end operation is performed by Liferay at server level when the user accesses the portlet interface. During this phase, FG UGR APIs will be used to:
 
 * Obtain a super-user access token
 * Get the Liferay user and register it as FG user is not yet available
@@ -241,19 +241,22 @@ cd liferay-workspace/modules/guitest/
 vi src/main/resources/META-INF/resources/init.jsp
 ```
 
-above the line `<liferay-theme:defineObjects />`, place the lines:
+Then replace the existing code with:
 
 ```javascript
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib uri="http://java.sun.com/portlet_2_0" prefix="portlet" %>
+<%@ taglib uri="http://liferay.com/tld/aui" prefix="aui" %><%@
+taglib uri="http://liferay.com/tld/portlet" prefix="liferay-portlet" %><%@
+taglib uri="http://liferay.com/tld/theme" prefix="liferay-theme" %><%@
+taglib uri="http://liferay.com/tld/ui" prefix="liferay-ui" %>
 <%@page import="java.io.*" %>
 <%@page import="java.net.*" %>
 <%@page import="java.util.Base64" %>
 <%@page import="com.liferay.portal.kernel.json.*" %> 
 <%@page import="it.infn.ct.FutureGatewayAPIs" %>
-```
-
-below the line `<liferay-theme:defineObjects />`, place the lines:
-
-```javascript
+<liferay-theme:defineObjects />
+<portlet:defineObjects />
 <%
     // FG settings
     String fgUser = "futuregateway";
@@ -266,15 +269,13 @@ below the line `<liferay-theme:defineObjects />`, place the lines:
     // Application settings
     String appName = "test application 1";
     int appId = 4;
-    String appGroup = appName;
+    String appGroup = "users";
+    int appGroupId = 2;
     String fgsgGroup = "fgsg_user";
 
     // Initialize FutureGatewayAPIs object
-    FutureGatewayAPIs fgAPIs = new FutureGatewayAPIs(
-      fgBaseUrl,
-      fgAPIVer,
-      fgUser,
-      fgPassword);
+    FutureGatewayAPIs fgAPIs =
+        new FutureGatewayAPIs(fgBaseUrl, fgAPIVer, fgUser, fgPassword);
 
     // Check FG service
     fgStatus = fgAPIs.checkServer();
@@ -312,11 +313,18 @@ below the line `<liferay-theme:defineObjects />`, place the lines:
             userExists = fgAPIs.userExists(screenName);
         }
 
-        // 3rd Retrieve the delegated access token (user token)
+        // 3rd If the user exists take care of its group membership
         if(userExists) {
-            delegatedAccessToken = fgAPIs.getAccessToken(fgUser, screenName);
-            // 4th Does the user belong to the application group?
             userGroup = fgAPIs.userHasGroup(screenName, appGroup);
+            if(!userGroup) {
+              // Register it if not yet belonging
+              String[] userGroups = { "" + appGroupId };
+              fgAPIs.addUserGroups(screenName, userGroups);
+              // Re-Check
+              userGroup = fgAPIs.userHasGroup(screenName, appGroup);
+            }
+            // 4th Retrieve the delegated access token
+            delegatedAccessToken = fgAPIs.getAccessToken(fgUser, screenName);
             fgAPIs.setBaselineToken(delegatedAccessToken);
         } else {
           message = "unable to create FG user";
@@ -327,7 +335,10 @@ below the line `<liferay-theme:defineObjects />`, place the lines:
 %>
 
 <script type="text/javascript">
+
+//FGAPIServer status
 fgstatus = "<%= fgStatus %>";
+
 // Collect user account info into FG user info
 fg_user_info = {
   name: '<%= screenName %>',
@@ -345,7 +356,7 @@ fg_user_info = {
 
 // FG API server settings
 fg_api_settings = {
-  base_url: '<%= fgBaseUrl =%>',
+  base_url: 'http://localhost/fgapiserver',
   version: 'v1.0',
   enabled: '<%= fgStatus %>',
 };
@@ -355,24 +366,175 @@ fg_app_settings = {
   name: '<%= appName %>',
   id: '<%= appId %>',
   group_name: '<%= appGroup %>',
+  group_enabled: '<%= userGroup %>',
 };
 </script>
 ```
 
-Despite the number of code lines, the purpose of the back-end code above is really simple especially because FG API are handled at high level by the java class **FutureGatewayAPIs** making the source more readable. Steps performed by code can be summarised by:
+Despite the number of code lines, the purpose of the back-end code above is really simple especially because FG APIs are handled at high level by the java class **FutureGatewayAPIs** making the source more readable. Steps performed by this code can be summarised by:
 
 * Retrieve portal user information from Liferay
 * Check the connection with the FG
 * Retrieve a *super user* access token using credentials having full access rights
 * Check if the portal user is already registered, if not it will be registered
+* During this operation also the user group membership will be checked and eventually it will be included. For production cases, this step could be subject to a different behavior. In this example the user has to belong to *users* group (baseline entry).
 * If the user exists, a delegated token for the user will be generated
-* If everithing is fine, the information about the back-end operations are collected inside three javascript variables: *fg_user_info*, *fg_api_settings*, *fg_app_settings*. The first collecting user information, the second for the FG API Server, the third for the application.
+* If everithing is fine, the information about the back-end operations are collected inside three javascript variables: *fg_user_info*, *fg_api_settings*, *fg_app_settings*. The first collecting user information, the second for the FG API Server, the third for the application. Please  notice that in *fg_api_settings*, the **base_url** field is different than the one used inside the `init.jsp` file, this because the client side of the portlet may address differently the API server address.
 
-It is possible to view the content of these variables accessing the portal opening the Browser inspector and using its console.
+It is possible to view the content of the javascript variables above, accessing the portal opening the Browser inspector and using its console.
 
 ## Manage fron-end
 
-tbw
+To manage the GUI interface at client level, it is needed to operate on the file:
+
+|---|---|
+|`src/main/resources/META-INF/resources/view.jsp`||
+
+Liferay 7.1 supports both [JQuery](https://jquery.com) and [Bootstrap](https://getbootstrap.com), this helps much making really easy the integration of a GUI interface for the FG Applications using FG APIs.
+The GUI interface will provide:
+
+  * A different interface in the case the user is logged and capable to run the application
+  * A simple user interface made of a submission area and a list of submitted tasks below.
+
+This tutorial will use as FG Application the first application used in the [FutureGateway APIs]({{ site.baseurl }}{% link tutorials/fgapis.md %}) tutorial. This is one of the most simple application to handle and it will require as input only two input parameters.
+
+* A job string identifier
+* A String representing the list of arguments used by the destination script in the DCI
+
+Below the che **curl** command used to execute the application:
+
+```bash
+curl -s\
+     -H "Authorization: $TKN"\
+     -H "Content-Type: application/json"\
+     -X POST\
+     -d "{ \"application\":\"$APP_ID\",
+           \"description\":\"testing application 1 with id: $APP_ID\",
+           \"arguments\": [\"this is the pased argument app 1\"],
+           \"output_files\": [{\"name\": \"$OUTFILE\"}],\
+           \"input_files\": [{\"name\": \"$SCRIPT\"}, {\"name\": \"$DATAFILE\"}]}"\
+     $FGHOST/tasks
+```
+
+Accordlinlgy to the command above, the two input identifiers will populate the input **json** fields: *description* and *arguments*
+For the second part of the interface the list of submitted tasks will be placed below the application submission interface.
+
+The client-side code principally manages the portlet web content dinamically using javascript.
+To do this, replace the existing **view.jsp** code prepared by the **blade** create command with: 
+
+```html
+<%@ include file="/init.jsp" %>
+
+<h3>GUITest Example</h3>
+<hr align="left" width="40%">
+<!-- main interface -->
+<div id="main">
+  <p>
+  <h4>Task submission</h4>
+  <hr align="left" width="70%">
+  <!-- Submission interface -->
+  <div id="submission">
+    <form>
+      <div class="form-group">
+        <label for="arguments">Arguments</label>
+        <input type="text" class="form-control" id="inputArguments" aria-describedby="argumentHelp" placeholder="arg1 arg2 ... argn">
+        <small id="argumentHelp" class="form-text text-muted">Place here a space separated list of arguments or use (quotes or double quotes) to specify single arguments having spaces in it.</small>
+      </div>
+      <div class="form-group">
+        <label for="description">Description</label>
+        <input type="text" class="form-control" id="inputDescription" placeholder="Job submission description">
+      </div>
+      <button type="button" class="btn btn-primary" id="buttonSubmit">Submit</button>
+    </form>
+  </div>
+  </p>
+  <p>
+  <!-- Tasks interface -->
+  <h4>Tasks</h4>
+  <hr align="left" width="70%">
+  <div id="tasks">
+  </div>
+  </p>
+</div>
+
+<!-- interface scripts -->
+<script type="text/javascript" src="<%= request.getContextPath() %>/js/fgapis.js"></script>
+<script type="text/javascript">
+
+// Build the base URL for FG APIs 
+fgAPIBaseURL = fg_api_settings.base_url + '/' + fg_api_settings.version;
+
+// Hold tasks (debugging/development)
+tasksData = null;
+
+// Generate the task list
+function prepare_task_list() {
+  $("#tasks").empty();
+  doGet(fgAPIBaseURL +'/tasks',
+        fg_user_info.access_token,
+        function(data) {
+          tasksData = data;
+          if(data.tasks.length) {
+            for(var i=0; i<data.tasks.length; i++) {
+              $("#tasks").append(
+                '<div class="row">' +
+                '  <div class="col">' + (i+1) + '</div>' +
+                '  <div class="col">' + data.tasks[i].date + '</div>' +
+                '  <div class="col">' + data.tasks[i].status + '</div>' +
+                '  <div class="col">' + data.tasks[i].description + '</div>' +
+                '</div>');
+            }
+          } else {
+            $("#tasks").html('<div class="alert alert-primary" role="alert">' +
+                             'No tasks are available yet' +
+                             '</div>');
+          }
+        },
+        function(data) {
+          tasksData = data;
+          console.log('ko');
+          var message = tasksData.responseJSON.message;
+          $("#tasks").html('<div class="alert alert-danger" role="alert">' +
+                           'Unable to retrieve the task list: \'' +
+                           message + '\'' +
+                           '</div>');
+        });
+}
+
+
+// Main function (GUI accessible)
+function guitest() {
+  console.log("guitest front end start");
+  prepare_task_list();
+}
+
+$( document ).ready(function() {
+if(!fg_api_settings.enabled) {
+      $("#main").html('<div class="alert alert-danger" role="alert">' +
+                      'FG API Server is not reachable, please contact the portal administrator' +
+                      '</div>');
+
+    } else if(fg_user_info.user_exists == "false") {
+      $("#main").html('<div class="alert alert-danger" role="alert">' +
+                      'You need to be logged to access this applciation interface' +
+                      '</div>');
+    } else {
+      guitest();
+    }
+});
+</script>
+```
+
+The utility repository [FGTookit](https://github.com/FutureGatewayFramework/fgToolkit) seen in section [Manage back-end operations](#manage-back-end-operations) provides several helper functions to call FG APIs from javascript.
+Use the following commands to include them and allowing the code above to find these functions.
+
+```bash
+mkdir ~/liferay-workspace/modules/guitest/src/main/resources/META-INF/resources/js
+cp ~/fgToolkit/js/fgapis.js\
+   ~/liferay-workspace/modules/guitest/src/main/resources/META-INF/resources/js/
+```
+
+
 
 # Advanced
 
