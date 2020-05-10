@@ -442,6 +442,8 @@ fgAPIBaseURL = fg_api_settings.base_url + '/' + fg_api_settings.version;
 
 // Hold tasks (debugging/development)
 tasksData = null;
+// Hold task submission result
+taskSubmit = null;
 
 // Build GUI interface
 function build_gui() {
@@ -504,15 +506,17 @@ function do_submit(args, desc) {
     output_files: [{ name: 'test.out'}],
   };
   doPost(fgAPIBaseURL +'/tasks',
-         fg_user_info.access_token,
-         task_data,
-         function(data) {
-           alert("Task submitted successfully!");
-           prepare_task_list();
-         },
-         function(data) {
-           alert("Unable to submit the job");
-         });
+    fg_user_info.access_token,
+    task_data,
+    function(data) {
+      taskSubmit = data;
+      alert("Task submitted successfully!");
+      prepare_task_list();
+    },
+    function(data) {
+      taskSubmit = data;
+      alert("Unable to submit the job");
+  });
 }
 
 // Generate the task list
@@ -535,7 +539,7 @@ function prepare_task_list() {
                 '<div class="row">' +
                 '  <div class="col">' + (i+1) + '</div>' +
                 '  <div class="col">' + data.tasks[i].creation + '</div>' +
-                '  <div class="col">' + data.tasks[i].status + '</div>' +
+                '  <div class="col">' + map_status(data.tasks[i].status) + '</div>' +
                 '  <div class="col">' + data.tasks[i].description + '</div>' +
                 '</div>');
             }
@@ -557,6 +561,22 @@ function prepare_task_list() {
                            message + '\'' +
                            '</div>');
         });
+}
+
+function map_status(status) {
+  var span_class = 'badge-info';
+  if(status == 'DONE') {
+    span_class = 'badge-success';
+  } else if(status == 'SUBMITTED') {
+    span_class = "badge-primary";
+  } else if(status == 'READY') {
+    span_class = 'badge-warning';
+  } else if(status == 'ABORT') {
+    span_class = 'badge-danger';
+  } else {
+    span_class = 'badge-secondary';
+  }
+  return '<span class="badge ' + span_class + '">' + status + '</span>';
 }
 
 // Main function (GUI accessible)
