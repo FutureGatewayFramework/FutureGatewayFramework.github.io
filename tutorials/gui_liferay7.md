@@ -425,36 +425,12 @@ To do this, replace the existing **view.jsp** code prepared by the **blade** cre
 ```html
 <%@ include file="/init.jsp" %>
 
+<!-- Title -->
 <h3>GUITest Example</h3>
 <hr align="left" width="40%">
+
 <!-- main interface -->
 <div id="main">
-  <p>
-  <h4>Task submission</h4>
-  <hr align="left" width="70%">
-  <!-- Submission interface -->
-  <div id="submission">
-    <form>
-      <div class="form-group">
-        <label for="arguments">Arguments</label>
-        <input type="text" class="form-control" id="inputArguments" aria-describedby="argumentHelp" placeholder="arg1 arg2 ... argn">
-        <small id="argumentHelp" class="form-text text-muted">Place here a space separated list of arguments or use (quotes or double quotes) to specify single arguments having spaces in it.</small>
-      </div>
-      <div class="form-group">
-        <label for="description">Description</label>
-        <input type="text" class="form-control" id="inputDescription" placeholder="Job submission description">
-      </div>
-      <button type="button" class="btn btn-primary" id="buttonSubmit">Submit</button>
-    </form>
-  </div>
-  </p>
-  <p>
-  <!-- Tasks interface -->
-  <h4>Tasks</h4>
-  <hr align="left" width="70%">
-  <div id="tasks">
-  </div>
-  </p>
 </div>
 
 <!-- interface scripts -->
@@ -467,6 +443,78 @@ fgAPIBaseURL = fg_api_settings.base_url + '/' + fg_api_settings.version;
 // Hold tasks (debugging/development)
 tasksData = null;
 
+// Build GUI interface
+function build_gui() {
+var guiContent =
+  '  <p>' +
+  '  <h4>Task submission</h4>' +
+  '  <hr align="left" width="70%">' +
+  '  <!-- Submission interface -->' +
+  '  <div id="submission">' +
+  '    <form>' +
+  '      <div class="form-group">' +
+  '        <label for="arguments">Arguments</label>' +
+  '        <input type="text" class="form-control" id="inputArguments" aria-describedby="argumentHelp" placeholder="arg1 arg2 ... argn">' +
+  '        <small id="argumentHelp" class="form-text text-muted">Place here a space separated list of arguments or use (quotes or double quotes) to specify single arguments having spaces in it.</small>' +
+  '      </div>' +
+  '      <div class="form-group">' +
+  '        <label for="description">Description</label>' +
+  '        <input type="text" class="form-control" id="inputDescription" placeholder="Job submission description">' +
+  '      </div>' +
+  '      <button type="button" class="btn btn-primary" id="buttonSubmit">Submit</button>' +
+  '    </form>' +
+  '  </div>' +
+  '  </p>' +
+  '  <p>' +
+  '  <!-- Tasks interface -->' +
+  '  <h4>Tasks</h4>' +
+  '  <hr align="left" width="70%">' +
+  '  <div id="tasks">' +
+  '  </div>' +
+  '  </p>';
+  $("#main").html(guiContent);
+  // Handlers
+  $('#buttonSubmit').on('click', function() {
+    if(!validate_inputs()) {
+      alert('Please specify valid descriprion and arguments');
+    } else {
+      var desc = $('#inputDescription').val();
+      var args = $('#inputArguments').val();
+      if (confirm('Are you sure to submit task: \'' + desc + '\'')) {
+        do_submit(args, desc);
+      }
+    }
+  });
+}
+
+// Validate application inpts
+function validate_inputs() {
+  var task_desc = $('#inputDescription').val();
+  var task_args = $('#inputArguments').val();
+  return task_desc != '' && task_args != '';
+}
+
+// Submit the task
+function do_submit(args, desc) {
+  console.log('submitting task with args: \'' + args + '\' - desc: \'' + desc + '\'');
+  task_data = {
+    application: fg_app_settings.id,
+    description: desc,
+    arguments: args,
+    output_files: [{ name: 'test.out'}],
+  };
+  doPost(fgAPIBaseURL +'/tasks',
+         fg_user_info.access_token,
+         task_data,
+         function(data) {
+           alert("Task submitted successfully!");
+           prepare_task_list();
+         },
+         function(data) {
+           alert("Unable to submit the job");
+         });
+}
+
 // Generate the task list
 function prepare_task_list() {
   $("#tasks").empty();
@@ -475,11 +523,18 @@ function prepare_task_list() {
         function(data) {
           tasksData = data;
           if(data.tasks.length) {
+            $("#tasks").append(
+              '<div class="row">' +
+              '  <div class="col"><b>#</b></div>' +
+              '  <div class="col"><b>Timestamp</b></div>' +
+              '  <div class="col"><b>Status</b></div>' +
+              '  <div class="col"><b>Description</b></div>' +
+              '</div>');
             for(var i=0; i<data.tasks.length; i++) {
               $("#tasks").append(
                 '<div class="row">' +
                 '  <div class="col">' + (i+1) + '</div>' +
-                '  <div class="col">' + data.tasks[i].date + '</div>' +
+                '  <div class="col">' + data.tasks[i].creation + '</div>' +
                 '  <div class="col">' + data.tasks[i].status + '</div>' +
                 '  <div class="col">' + data.tasks[i].description + '</div>' +
                 '</div>');
@@ -489,10 +544,13 @@ function prepare_task_list() {
                              'No tasks are available yet' +
                              '</div>');
           }
+          $("#tasks").append('<br/><button type="button" class="btn btn-primary" id="buttonRefresh">Refresh</button>');
+          $("#buttonRefresh").on('click', function() {
+            prepare_task_list();
+          });
         },
         function(data) {
           tasksData = data;
-          console.log('ko');
           var message = tasksData.responseJSON.message;
           $("#tasks").html('<div class="alert alert-danger" role="alert">' +
                            'Unable to retrieve the task list: \'' +
@@ -501,22 +559,27 @@ function prepare_task_list() {
         });
 }
 
-
 // Main function (GUI accessible)
 function guitest() {
   console.log("guitest front end start");
+  build_gui();
   prepare_task_list();
 }
 
-$( document ).ready(function() {
-if(!fg_api_settings.enabled) {
+$(document).ready(function() {
+  console.log('log ' + themeDisplay.isSignedIn());
+  if(!themeDisplay.isSignedIn()) {
+    $("#main").html('<div class="alert alert-danger" role="alert">' +
+                    'You must sing-in to access this application' +
+                    '</div>');
+  } else if(!fg_api_settings.enabled) {
       $("#main").html('<div class="alert alert-danger" role="alert">' +
                       'FG API Server is not reachable, please contact the portal administrator' +
                       '</div>');
 
     } else if(fg_user_info.user_exists == "false") {
       $("#main").html('<div class="alert alert-danger" role="alert">' +
-                      'You need to be logged to access this applciation interface' +
+                      'You need to be registered in Futuregateway to access this applciation interface' +
                       '</div>');
     } else {
       guitest();
@@ -525,15 +588,11 @@ if(!fg_api_settings.enabled) {
 </script>
 ```
 
-The utility repository [FGTookit](https://github.com/FutureGatewayFramework/fgToolkit) seen in section [Manage back-end operations](#manage-back-end-operations) provides several helper functions to call FG APIs from javascript.
-Use the following commands to include them and allowing the code above to find these functions.
-
-```bash
-mkdir ~/liferay-workspace/modules/guitest/src/main/resources/META-INF/resources/js
-cp ~/fgToolkit/js/fgapis.js\
-   ~/liferay-workspace/modules/guitest/src/main/resources/META-INF/resources/js/
-```
-
+The **view** jsp just provides a basic HTML structure with div section having id **main**.
+The rest of the GUI interface is creating dynamically accordinly to the status of the APIServer, the user rights etc.
+The entrypoint of the dynamic part the the `document.ready(function()...`.
+In case the user is logger and API server is available, the main GUI interface will be built.
+The interface has two different parts, the first for the application input and submission, the second for submitted task list.
 
 
 # Advanced
