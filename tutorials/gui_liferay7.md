@@ -7,8 +7,8 @@ exclude: true
 # Liferay GUI Tutorial
 
 This tutorial will guide the reader in the creation of a simple GUI interface provided by the Liferay portal with a FutureGateway instance.
-This tutorial is linked with the tutorial: [FutureGateway APIs tutorial](/tutorials/fgapis.html) for this reason, before starting this turoal at least the **fgtest** container must be up and running together with futuregateway services running in it.
-Please be aware that Liferay requires a sensitive amount of physical resources ins terms of bot RAM and CPUs. It could be necessary to verify the amount of resources that Docker resevers to the conatainers.
+This tutorial is linked with the tutorial: [FutureGateway APIs tutorial](/tutorials/fgapis.html) for this reason, before starting this turoal at least the **fgtest** container must be up and running together with futuregateway services running in it and at least the first FG application installed.
+Please be aware that Liferay requires a sensitive amount of physical resources ins terms of both RAM and CPUs. It could be necessary to verify the amount of resources that Docker resevers to the conatainers and tune it accordingly. The minimal resources amount would be 2 CPUs and 3GB of RAM.
 
 By this tutorial the user will:
 
