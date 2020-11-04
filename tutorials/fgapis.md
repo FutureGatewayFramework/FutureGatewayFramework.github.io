@@ -9,8 +9,9 @@ exclude: true
 This step by step guide intoduces to the installation and test of the FutureGateway (FG)
 To perform the tutorial, your environment have to satisfy the following **requirements**.
 
-* **Docker** installation with its **compose** capability;
-* **Make** GNU make utility.
+* **Docker** installation;
+* **Make** GNU make utility;
+* **curl** Command line tool.
 
 Tests peformed by this procedure are the same used to test *Ubuntu 18.04* installation scripts and FG core tests perfomed by its development operations.
 
