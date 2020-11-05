@@ -19,7 +19,7 @@ The [FutureGateway Framework][fgf] has been initially developed and simply calle
 # Presentations and demos
 
 |---|---|
-|[EGI Conference 2020]https://indico.egi.eu/event/5000/| Presentation of the [EOSC-hub][eosc-hub] [Science Software on Demand](https://indico.egi.eu/event/5000/contributions/14509/attachments/13435/16391/SSOD_Clinic3.pdf) service|
+|[EGI Conference 2020](https://indico.egi.eu/event/5000/)| Presentation of the [EOSC-hub][eosc-hub] [Science Software on Demand](https://indico.egi.eu/event/5000/contributions/14509/attachments/13435/16391/SSOD_Clinic3.pdf) service|
 |[InvenioRDM Project Meeting][inveniordmpm]|Reusability and Reproduciblity Platform inside the [INFN OpenAccess Repository][infnoar] using Invenio+Zenodo customisation|
 |[BEILSTEIN SYMPOSIUM '19](https://www.beilstein-institut.de/files/abstract_book_beilstein_openscience_symposium_2019_online.pdf)|[Science Reproducibility and Reusability with FutureGateway and a Zenodo-like repository: the PALMS experiment](/fgf/update/2019/10/15/beilstein-symposium-19.html)|
 |[DI4R2018](https://indico.egi.eu/indico/event/3973/timetable/#20181009)|[Enabling scientific applications on hybrid e-Infrastructures: the FutureGateway framework](https://www.digitalinfrastructures.eu/content/enabling-scientific-applications-hybrid-e-infrastructures-futuregateway-framework)|
