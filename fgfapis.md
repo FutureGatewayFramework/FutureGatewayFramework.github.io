@@ -13,22 +13,22 @@ The whole set of APIs have been splitted in the following families:
 * **UGR** - Users Groups and Roles (_Specification not yet available_)
 * **AAA** - Authorizing, Auditing and Accounting (*under desing*)
 
-## IAT
+## [IAT](https://futuregateway-framework.readthedocs.io/en/latest/usage/#user-guide)
 This set of API that manages the core part of the [FGF], in particuar:
 
-|**Infrastructures**|
+|**[Infrastructures](https://futuregateway-framework.readthedocs.io/en/latest/usage/#infrastructures)**|
 |---|
 |Describes the necessary configuration required to execute an ‘application’ into an existing DCI. Infrastructure configuration is specified through a set of pairs: <Key name, Key value>. These values will be associated to an infrastructure that will be refernced by one or more applications using that infrastructure to run.|
 
-|**Applications**|
+|**[Applications](https://futuregateway-framework.readthedocs.io/en/latest/usage/#applications)**|
 |---|
 |Describes the activity to perform on the DCI in terms of: what to execute, involved files, error and output streams, etc. Each application will then reference a target infrastructure and it is also possible to specify more than one infrastructures, in such a case the infrastructure will be randomly selected during execution request.|
 
-|**Tasks**|
+|**[Tasks](https://futuregateway-framework.readthedocs.io/en/latest/usage/#tasks)**|
 |---|
 |Applications executed or executing on a DCI are tasks. The term ‘task’ may include many operations ranging from simple batch executions, up to more sophisticated actions like a PaaS creation , start/stop services, etc. The activity to perform on top of the DCI is a combination of settings between _Infrastructures_ and _Applications_.
 
-## UGR
+## [UGR](https://futuregateway-framework.readthedocs.io/en/latest/usage/#users-groups-and-roles)
 This set of API is used to map SG membership allowing or denying authorization to the DCI resorces.
 
 |**Users**|
@@ -45,8 +45,7 @@ This set of API is used to map SG membership allowing or denying authorization t
 
 
 ## AAA
-Auditing and Accounting provides the infrormation of who did what and when on top of a given DCI form the SGs. This API set is not yet implemented, however Auditing and Accounting can be performed properly querying the FG database. This kind of interaction has been used before UGR was available.
-
+Auditing and Accounting provides the infrormation of who did what and when on top of a given DCI form the SGs. This API set is not yet implemented, however Auditing and Accounting can be performed properly querying the FG database. This kind of interaction has been used for UGR, before this its set of APIs was available. To learn more about querying the database, pleas refer to the [DB Schema](https://futuregateway-framework.readthedocs.io/en/latest/usage/#db-schema) explanation.
 
 
 [FGF]: https://github.com/FutureGatewayFramework
