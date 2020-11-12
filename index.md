@@ -27,6 +27,7 @@ The FGF is totally [open source][osi], licenced under the [Apache2][apache2] ter
 
 If you are interested in this work and you want to get more information, plase visit the [design](/design/) page. For GUI developers it could be interesting to get overview of the [futuregateway APIs](/fgfapis/), or to get full information about the FGF, please visit its [documentation](https://futuregateway-framework.readthedocs.io/en/latest/?badge=latest).
 If you would like to stay updated with FGF developments you may visit our [news](/news/) area.
+Under [resources](/resources/) it is possible to find **tutorials** very useful to make practice with the framework or get information about any specific source projects available under [FutureGateway Framework][fgf] inside [GitHub][github] repository].
 
 Subscribe the FutureGatewayFramework <a href="https://mailman.ct.infn.it/mailman/listinfo/futuregatewayframework">mailing list</a>
 
