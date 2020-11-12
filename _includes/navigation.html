@@ -1,5 +1,4 @@
 <!-- navigation.html contents -->
-
 {% assign links = site.data.menu | sort:"order" %}
 
 <ul>
@@ -11,3 +10,4 @@
   </li>
 {% endfor %}
 </ul>
+{% assign navurl = page.url | remove: 'mermaid.md' %}
